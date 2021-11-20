@@ -30,7 +30,8 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path . -l @yassipad/nuxt-crawler -r 1"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path . -l @yassipad/nuxt-crawler -r 1",
+    "test": "jest"
   },
   "dependencies": {
     "@nuxt/kit": "^0.8.1-edge",
@@ -39,9 +40,16 @@
   },
   "devDependencies": {
     "@apenhet/eslint-config": "latest",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@nuxt/test-utils": "^0.2.2",
     "@nuxt/types": "^2.15.8",
+    "@types/jest": "^27.0.3",
     "conventional-changelog": "^3.1.24",
     "conventional-changelog-cli": "^2.1.1",
+    "jest": "^27.3.1",
+    "nuxt": "^2.15.8",
+    "typescript": "^4.5.2",
     "unbuild": "latest"
   },
   "publishConfig": {
@@ -49,5 +57,8 @@
   },
   "eslintConfig": {
     "extends": "@apenhet"
+  },
+  "jest": {
+    "preset": "@nuxt/test-utils"
   }
 }
