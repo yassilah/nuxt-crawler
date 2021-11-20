@@ -2,7 +2,7 @@
   "name": "@yassilah/nuxt-crawler",
   "version": "0.0.1",
   "description": "Automatic crawler & search for Nuxt SSG",
-  "repository": "git@github.com:yassilah/nuxt-algolia-crawler.git",
+  "repository": "git@github.com:yassilah/nuxt-crawler.git",
   "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com>",
   "license": "MIT",
   "keywords": [
