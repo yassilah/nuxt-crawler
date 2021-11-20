@@ -1,5 +1,5 @@
 {
-  "name": "@yassipad/nuxt-crawler",
+  "name": "@yassilah/nuxt-crawler",
   "version": "0.0.1",
   "description": "Automatic crawler & search for Nuxt SSG",
   "repository": "git@github.com:yassilah/nuxt-algolia-crawler.git",
@@ -40,6 +40,8 @@
   "devDependencies": {
     "@apenhet/eslint-config": "latest",
     "@nuxt/types": "latest",
+    "conventional-changelog": "^3.1.24",
+    "conventional-changelog-cli": "^2.1.1",
     "unbuild": "latest"
   },
   "publishConfig": {

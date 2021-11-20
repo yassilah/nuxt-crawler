@@ -5,7 +5,7 @@ import getMetaData from 'metadata-scraper'
 import type { MetaData } from 'metadata-scraper/lib/types'
 import type { SearchClient, SearchIndex } from 'algoliasearch'
 
-export interface NuxtCrawlerOptions {
+export interface CrawlerOptions {
     fields:
         | ((route: string, html: string, meta: MetaData) => Partial<MetaData>)
         | (keyof MetaData)[]
@@ -16,7 +16,7 @@ export interface NuxtCrawlerOptions {
     indexName: string
 }
 
-export default defineNuxtModule<Partial<NuxtCrawlerOptions>>(nuxt => ({
+export default defineNuxtModule<Partial<CrawlerOptions>>(nuxt => ({
     name,
     version,
     configKey: 'crawler',
@@ -24,7 +24,7 @@ export default defineNuxtModule<Partial<NuxtCrawlerOptions>>(nuxt => ({
         include: undefined,
         fields: ['title', 'description']
     },
-    setup(options: NuxtCrawlerOptions) {
+    setup(options: CrawlerOptions) {
         const pages: CrawlerPage[] = []
 
         function shouldInclude(route: string) {
@@ -61,7 +61,12 @@ export default defineNuxtModule<Partial<NuxtCrawlerOptions>>(nuxt => ({
 
             if (!options.appId)
                 throw new Error(
-                    `Could not start Nuxt Crawler because no Application ID key was given. Please check your configuration.`
+                    `Could not start Nuxt Crawler because no Application ID was given. Please check your configuration.`
+                )
+
+            if (!options.indexName)
+                throw new Error(
+                    `Could not start Nuxt Crawler because no Index name was given. Please check your configuration.`
                 )
 
             nuxt.options.cli.badgeMessages.push(
@@ -151,13 +156,13 @@ declare module '@nuxt/kit' {
             fields: Partial<MetaData>
         }): void
         'crawler:index:before'(params: {
-            options: NuxtCrawlerOptions
+            options: CrawlerOptions
             pages: CrawlerPage[]
             client: SearchClient
             index: SearchIndex
         }): void
         'crawler:index:after'(params: {
-            options: NuxtCrawlerOptions
+            options: CrawlerOptions
             pages: CrawlerPage[]
             client: SearchClient
             index: SearchIndex
