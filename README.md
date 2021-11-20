@@ -5,8 +5,8 @@ Automatically crawl and store metadata about your Nuxt generated pages into your
 # Install
 
 ```bash
-yarn add @yassilah/nuxt-crawler -D
-# npm i @yassilah/nuxt-crawler -D
+yarn add @yassidev/nuxt-crawler -D
+# npm i @yassidev/nuxt-crawler -D
 ```
 
 # Usage
@@ -18,7 +18,7 @@ Within your `nuxt.config` add the following:
 
 export default {
     buildModules: [
-        '@yassilah/nuxt-crawler'
+        '@yassidev/nuxt-crawler'
     ],
 
     crawler: {
@@ -40,7 +40,7 @@ ForTypescript support, add the module within your `tsconfig.json`:
 {
   "compilerOptions": {
     "types": [
-      "@yassilah/nuxt-crawler"
+      "@yassidev/nuxt-crawler"
     ]
   }
 }

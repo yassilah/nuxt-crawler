@@ -1,10 +1,11 @@
 {
-  "name": "@yassilah/nuxt-crawler",
+  "name": "@yassidev/nuxt-crawler",
   "version": "0.0.1",
   "description": "Automatic crawler & search for Nuxt SSG",
   "repository": "git@github.com:yassilah/nuxt-crawler.git",
   "author": "Yasser Lahbibi <yasser.lahbibi@apenhet.com>",
   "license": "MIT",
+  "private": false,
   "keywords": [
     "nuxt",
     "algolia",
@@ -33,13 +34,12 @@
   },
   "dependencies": {
     "@nuxt/kit": "^0.8.1-edge",
-    "algoliasearch": "latest",
-    "metadata-scraper": "^0.2.44",
-    "vue-demi": "*"
+    "algoliasearch": "^4.11.0",
+    "metadata-scraper": "^0.2.44"
   },
   "devDependencies": {
     "@apenhet/eslint-config": "latest",
-    "@nuxt/types": "latest",
+    "@nuxt/types": "^2.15.8",
     "conventional-changelog": "^3.1.24",
     "conventional-changelog-cli": "^2.1.1",
     "unbuild": "latest"
